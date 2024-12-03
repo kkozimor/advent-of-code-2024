@@ -2,19 +2,29 @@ package org.example
 
 import org.example.inputReaders.InputReader
 import org.example.puzzles.DayOne
+import org.example.puzzles.DayTwo
 
-val FILE_NAME = "dayOne/input.txt"
+val FILE_NAME = "dayTwo/input.txt"
 
 fun main() {
     val inputReader = InputReader()
-    val dayOne = DayOne()
+    val dayTwo = DayTwo()
 
-    val (listOne, listTwo) = inputReader.readIntPairsInput(FILE_NAME)
+    val input = inputReader.readStringInput(FILE_NAME)
 
     println(
-        dayOne.taskOne(listOne, listTwo)
+        dayTwo.taskOne(input)
     )
     println(
-        dayOne.taskTwo(listOne, listTwo)
+        dayTwo.taskTwo(input)
     )
+
+//    val (listOne, listTwo) = inputReader.readIntPairsInput(FILE_NAME)
+//
+//    println(
+//        dayOne.taskOne(listOne, listTwo)
+//    )
+//    println(
+//        dayOne.taskTwo(listOne, listTwo)
+//    )
 }
