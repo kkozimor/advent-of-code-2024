@@ -22,4 +22,8 @@ class InputReader {
             }
         }
     }
+
+    fun readStringInput(fileName: String): String {
+        return File("src/main/resources/$fileName").readText()
+    }
 }
