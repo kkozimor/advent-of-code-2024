@@ -14,4 +14,12 @@ class InputReader {
                 .unzip()
         }
     }
+
+    fun lazyReadIntArrayInput(fileName: String): Sequence<List<Int>> = sequence {
+        File("src/main/resources/$fileName").useLines { lines ->
+            lines.forEach {
+                yield(it.split("\\s+".toRegex()).map { it.toInt() })
+            }
+        }
+    }
 }
