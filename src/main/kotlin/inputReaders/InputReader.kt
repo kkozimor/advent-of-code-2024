@@ -26,4 +26,12 @@ class InputReader {
     fun readStringInput(fileName: String): String {
         return File("src/main/resources/$fileName").readText()
     }
+
+    fun lazyReadStringLines(fileName: String): Sequence<String> = sequence {
+        File("src/main/resources/$fileName").useLines { lines ->
+            lines.forEach {
+                yield(it)
+            }
+        }
+    }
 }
